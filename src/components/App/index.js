@@ -1,23 +1,36 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Card from "../Card";
+import PlayerHand from "../PlayerHand";
 const cards = require("../../data.json");
 
 function App() {
-  const [question, setQuestion] = useState("");
-  console.log(`the`, cards);
+  const [question, setQuestion] = useState([]);
+  const [hand, setHand] = useState([]);
 
   useEffect(() => {
     const blackCards = cards.blackCards.map((card) => (
       <Card text={card.text} cardColour={`black`} />
     ));
+    const whiteCards = cards.whiteCards.map((card) => (
+      <Card text={card} cardColour={`white`} />
+    ));
     setQuestion(blackCards);
-    console.log(blackCards);
+    setHand(whiteCards);
+    console.log(whiteCards);
   }, []);
-  return <div className="App">{question[0]}</div>;
+  return (
+    <div className="App">
+      {question[0]}
+      <PlayerHand sevenCards={hand.slice(0, 7)} />
+    </div>
+  );
 }
 
 /* PLAN
+
+button to draw 7 white cards
+on click fetches 7  white cards and displays them as a hand - can be randomised later
 
 MVP = make a component for each hand -> later on will have multiple hands and not see other players cards. 
 

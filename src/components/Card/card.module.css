@@ -1,3 +1,8 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .card {
   margin: 1em;
   padding: 1em;
@@ -11,10 +16,11 @@
 .blackCard {
   background-color: black;
   color: white;
-  /* black bckgrnd, white text */
 }
 
 .whiteCard {
+  display: inline-flex;
   background-color: white;
   color: black;
+  overflow-wrap: break-word !important;
 }
