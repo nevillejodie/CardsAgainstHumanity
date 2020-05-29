@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Card from "../Card"
-const cards2 = require("../../data.json");
-
+import Card from "../Card";
+const cards = require("../../data.json");
 
 function App() {
-  const [cards, setCards] = useState("");
+  const [question, setQuestion] = useState("");
+  console.log(`the`, cards);
 
- console.log(cards2)
-  return (
-    <div className="App">
-      <p>{cards2.blankCards}</p>
-      
-<Card text={"Murray's mom has got it going on"} cardColour={`black`}/>
-    </div>
-  );
+  useEffect(() => {
+    const blackCards = cards.blackCards.map((card) => (
+      <Card text={card.text} cardColour={`black`} />
+    ));
+    setQuestion(blackCards);
+    console.log(blackCards);
+  }, []);
+  return <div className="App">{question[0]}</div>;
 }
 
 /* PLAN
@@ -38,6 +38,5 @@ sort randomly the entire deck, store in an array, pop off the top each time you 
 global variables = scores for each player, shuffled black cards, shuffled white cards.  
 
 */
-
 
 export default App;
