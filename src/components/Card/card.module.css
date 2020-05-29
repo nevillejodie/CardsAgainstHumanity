@@ -1,17 +1,20 @@
-.card{
-height: 150px;
-width: 80px;
-border-radius: 10%;
-border: 2px solid black;
+.card {
+  margin: 1em;
+  padding: 1em;
+  height: 150px;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align: left;
 }
 
-.blackCard{
-background-color: black;
-color: white;
-    /* black bckgrnd, white text */
+.blackCard {
+  background-color: black;
+  color: white;
+  /* black bckgrnd, white text */
 }
 
-.whiteCard{
-background-color: white;
-color: black;
+.whiteCard {
+  background-color: white;
+  color: black;
 }
