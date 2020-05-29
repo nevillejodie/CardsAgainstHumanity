@@ -1,0 +1,17 @@
+.card{
+height: 150px;
+width: 80px;
+border-radius: 10%;
+border: 2px solid black;
+}
+
+.blackCard{
+background-color: black;
+color: white;
+    /* black bckgrnd, white text */
+}
+
+.whiteCard{
+background-color: white;
+color: black;
+}

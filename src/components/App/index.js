@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
+import Card from "../Card"
 const cards2 = require("../../data.json");
+
 
 function App() {
   const [cards, setCards] = useState("");
@@ -9,7 +11,8 @@ function App() {
   return (
     <div className="App">
       <p>{cards2.blankCards}</p>
-
+      
+<Card text={"Murray's mom has got it going on"} cardColour={`black`}/>
     </div>
   );
 }
